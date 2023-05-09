@@ -1,8 +1,7 @@
 # flake8: noqa
 """Load tools."""
 import warnings
-from typing import Any, Dict, List, Optional, Callable, Tuple
-from mypy_extensions import Arg, KwArg
+from typing import Any, Dict, List, Optional, Callable, Tuple, TYPE_CHECKING
 
 from langchain.agents.tools import Tool
 from langchain.base_language import BaseLanguageModel
@@ -43,6 +42,10 @@ from langchain.utilities.searx_search import SearxSearchWrapper
 from langchain.utilities.serpapi import SerpAPIWrapper
 from langchain.utilities.wikipedia import WikipediaAPIWrapper
 from langchain.utilities.wolfram_alpha import WolframAlphaAPIWrapper
+
+
+if TYPE_CHECKING:
+    from mypy_extensions import Arg, KwArg
 
 
 def _get_python_repl() -> BaseTool:
